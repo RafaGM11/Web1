@@ -1,7 +1,7 @@
-
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
@@ -28,6 +28,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Servir archivos estáticos desde el directorio 'public'
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Configurar body-parser para manejar datos POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Ruta para servir el archivo index.html
 app.get('/', (req, res) => {
