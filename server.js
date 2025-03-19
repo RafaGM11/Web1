@@ -1,9 +1,9 @@
+
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql');
 const app = express();
 const port = 3000;
-
 
 // Configuración de la conexión a la base de datos MySQL
 const db = mysql.createConnection({
@@ -22,6 +22,10 @@ db.connect((err) => {
   console.log('Conectado a la base de datos MySQL');
 });
 
+// Configurar el motor de plantillas EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Servir archivos estáticos desde el directorio 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,7 +34,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Ejemplo de ruta que realiza una consulta a la base de datos
+// Ruta para mostrar los datos de la base de datos
 app.get('/data', (req, res) => {
   db.query('SELECT * FROM Customers', (err, results) => {
     if (err) {
@@ -38,7 +42,7 @@ app.get('/data', (req, res) => {
       res.status(500).send('Error en la consulta');
       return;
     }
-    res.json(results);
+    res.render('data', { customers: results });
   });
 });
 
