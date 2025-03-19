@@ -42,23 +42,27 @@
       <div id="main">
         <div class="inner">
           <header>
-            <h1>Datos de Clientes</h1>
+            <h1>Lista de Clientes</h1>
           </header>
           <section>
             <table>
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Email</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
                 </tr>
               </thead>
               <tbody>
                 <% customers.forEach(customer => { %>
                   <tr>
-                    <td><%= customer.id %></td>
-                    <td><%= customer.name %></td>
-                    <td><%= customer.email %></td>
+                    <td><%= customer.CustomerID %></td>
+                    <td><%= customer.CustomerName %></td>
+                    <td><%= customer.CustomerEmail %></td>
+                    <td><%= customer.CustomerPhone %></td>
+                    <td><%= customer.Address %></td>
                   </tr>
                 <% }) %>
               </tbody>
