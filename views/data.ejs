@@ -48,11 +48,11 @@
             <table>
               <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+                  <th>Dirección</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +67,28 @@
                 <% }) %>
               </tbody>
             </table>
+          </section>
+          <section>
+            <h2>Agregar Cliente</h2>
+            <form method="post" action="/add-customer">
+              <div class="fields">
+                <div class="field half">
+                  <input type="text" name="CustomerName" id="CustomerName" placeholder="Nombre" required />
+                </div>
+                <div class="field half">
+                  <input type="email" name="CustomerEmail" id="CustomerEmail" placeholder="Email" required />
+                </div>
+                <div class="field half">
+                  <input type="text" name="CustomerPhone" id="CustomerPhone" placeholder="Teléfono" required />
+                </div>
+                <div class="field">
+                  <input type="text" name="Address" id="Address" placeholder="Dirección" required />
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Agregar Cliente" class="primary" /></li>
+              </ul>
+            </form>
           </section>
         </div>
       </div>

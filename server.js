@@ -50,6 +50,20 @@ app.get('/data', (req, res) => {
   });
 });
 
+app.post('/add-customer', (req, res) => {
+  const { CustomerName, CustomerEmail, CustomerPhone, Address } = req.body;
+  const sql = 'INSERT INTO Customers (CustomerName, CustomerEmail, CustomerPhone, Address) VALUES (?, ?, ?, ?)';
+  db.query(sql, [CustomerName, CustomerEmail, CustomerPhone, Address], (err, result) => {
+    if (err) {
+      console.error('Error insertando datos:', err);
+      res.status(500).send('Error insertando datos');
+      return;
+    }
+    console.log('Registro insertado:', result.insertId);
+    res.send('Cliente agregado exitosamente');
+  });
+});
+
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server running at http://0.0.0.0:${port}/`);
 });
