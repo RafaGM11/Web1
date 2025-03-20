@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Datos de Clientes</title>
+    <title><%= product.ProductName %></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/assets/css/main.css" />
@@ -30,7 +30,7 @@
         <h2>Menu</h2>
         <ul>
           <li><a href="/">Inicio</a></li>
-          <li><a href="/tienda.html">Tienda</a></li>
+          <li><a href="/tienda">Tienda</a></li>
           <li><a href="/categorias.html">Categorías</a></li>
           <li><a href="/nosotros.html">Nosotros</a></li>
           <li><a href="/contact.html">Contáctanos</a></li>
@@ -42,53 +42,13 @@
       <div id="main">
         <div class="inner">
           <header>
-            <h1>Lista de Clientes</h1>
+            <h1><%= product.ProductName %></h1>
           </header>
           <section>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nombre</th>
-                  <th>Email</th>
-                  <th>Teléfono</th>
-                  <th>Dirección</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% customers.forEach(customer => { %>
-                  <tr>
-                    <td><%= customer.CustomerID %></td>
-                    <td><%= customer.CustomerName %></td>
-                    <td><%= customer.CustomerEmail %></td>
-                    <td><%= customer.CustomerPhone %></td>
-                    <td><%= customer.Address %></td>
-                  </tr>
-                <% }) %>
-              </tbody>
-            </table>
-          </section>
-          <section>
-            <h2>Agregar Cliente</h2>
-            <form method="post" action="/add-customer">
-              <div class="fields">
-                <div class="field half">
-                  <input type="text" name="CustomerName" id="CustomerName" placeholder="Nombre" required />
-                </div>
-                <div class="field half">
-                  <input type="email" name="CustomerEmail" id="CustomerEmail" placeholder="Email" required />
-                </div>
-                <div class="field half">
-                  <input type="text" name="CustomerPhone" id="CustomerPhone" placeholder="Teléfono" required />
-                </div>
-                <div class="field half">
-                  <input type="text" name="Address" id="Address" placeholder="Dirección" required />
-                </div>
-              </div>
-              <ul class="actions">
-                <li><input type="submit" value="Agregar Cliente" class="primary" /></li>
-              </ul>
-            </form>
+            <span class="image main"><img src="<%= product.ImageURL %>" alt="" /></span>
+            <p><%= product.Description %></p>
+            <p>Precio: $<%= product.Price %></p>
+            <p>Stock: <%= product.Stock %></p>
           </section>
         </div>
       </div>

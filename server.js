@@ -50,6 +50,7 @@ app.get('/data', (req, res) => {
   });
 });
 
+// Ruta para agregar un nuevo cliente
 app.post('/add-customer', (req, res) => {
   const { CustomerName, CustomerEmail, CustomerPhone, Address } = req.body;
   const sql = 'INSERT INTO Customers (CustomerName, CustomerEmail, CustomerPhone, Address) VALUES (?, ?, ?, ?)';
@@ -61,6 +62,35 @@ app.post('/add-customer', (req, res) => {
     }
     console.log('Registro insertado:', result.insertId);
     res.send('Cliente agregado exitosamente');
+  });
+});
+
+// Ruta para mostrar la lista de productos en la tienda
+app.get('/tienda', (req, res) => {
+  db.query('SELECT * FROM Products', (err, results) => {
+    if (err) {
+      console.error('Error realizando la consulta:', err);
+      res.status(500).send('Error en la consulta');
+      return;
+    }
+    res.render('tienda', { products: results });
+  });
+});
+
+// Ruta para mostrar los detalles de un producto específico
+app.get('/producto/:id', (req, res) => {
+  const productId = req.params.id;
+  db.query('SELECT * FROM Products WHERE ProductID = ?', [productId], (err, result) => {
+    if (err) {
+      console.error('Error realizando la consulta:', err);
+      res.status(500).send('Error en la consulta');
+      return;
+    }
+    if (result.length === 0) {
+      res.status(404).send('Producto no encontrado');
+      return;
+    }
+    res.render('producto', { product: result[0] });
   });
 });
 
