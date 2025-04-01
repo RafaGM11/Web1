@@ -80,20 +80,36 @@ app.get('/tienda', (req, res) => {
 // Ruta para mostrar los detalles de un producto específico
 app.get('/producto/:id', (req, res) => {
   const productId = req.params.id;
-  db.query('SELECT * FROM Products WHERE ProductID = ?', [productId], (err, result) => {
+
+  // Consulta para obtener el producto y sus imágenes
+  const sql = `
+    SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Stock, pi.ImageURL
+    FROM Products p
+    LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID
+    WHERE p.ProductID = ?`;
+
+  db.query(sql, [productId], (err, results) => {
     if (err) {
       console.error('Error realizando la consulta:', err);
       res.status(500).send('Error en la consulta');
       return;
     }
-    if (result.length === 0) {
+
+    if (results.length === 0) {
       res.status(404).send('Producto no encontrado');
       return;
     }
-    res.render('producto', { product: result[0] });
-  });
-});
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running at http://0.0.0.0:${port}/`);
+    // El primer resultado contiene los datos del producto
+    const product = {
+      ProductID: results[0].ProductID,
+      ProductName: results[0].ProductName,
+      Description: results[0].Description,
+      Price: results[0].Price,
+      Stock: results[0].Stock,
+      Images: results.map(row => row.ImageURL) // Extrae todas las URLs de imágenes
+    };
+
+    res.render('producto', { product });
+  });
 });

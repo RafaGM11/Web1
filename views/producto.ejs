@@ -45,8 +45,11 @@
             <h1><%= product.ProductName %></h1>
           </header>
           <section>
-            <span class="image main"><img src="<%= product.ImageURL %>" alt="" /></span>
-            <p><%= product.Description %></p>
+            <!-- Mostrar todas las imágenes del producto -->
+            <% product.Images.forEach(ImageURL => { %>
+              <span class="image main"><img src="<%= ImageURL %>" alt="Imagen del producto" /></span>
+            <% }) %>
+            <p><%= product.ProductDescription %></p>
             <p>Precio: $<%= product.Price %></p>
             <p>Stock: <%= product.Stock %></p>
           </section>
