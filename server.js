@@ -83,7 +83,7 @@ app.get('/producto/:id', (req, res) => {
 
   // Consulta para obtener el producto y sus imágenes
   const sql = `
-    SELECT p.ProductID, p.ProductName, p.Description, p.Price, p.Stock, pi.ImageURL
+    SELECT p.ProductID, p.ProductName, p.ProductDescription, p.Price, p.Stock, pi.ImageURL
     FROM Products p
     LEFT JOIN ProductImages pi ON p.ProductID = pi.ProductID
     WHERE p.ProductID = ?`;
@@ -104,7 +104,7 @@ app.get('/producto/:id', (req, res) => {
     const product = {
       ProductID: results[0].ProductID,
       ProductName: results[0].ProductName,
-      Description: results[0].Description,
+      ProductDescription: results[0].ProductDescription,
       Price: results[0].Price,
       Stock: results[0].Stock,
       Images: results.map(row => row.ImageURL) // Extrae todas las URLs de imágenes
