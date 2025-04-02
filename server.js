@@ -13,6 +13,7 @@ const db = mysql.createConnection({
   user: config.db.user,
   password: config.db.password,
   database: config.db.database,
+  port: config.db.port, // Puerto por defecto de MySQL
 });
 
 // Conectar a la base de datos
