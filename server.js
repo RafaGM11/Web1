@@ -6,11 +6,13 @@ const app = express();
 const port = 3000;
 
 // Configuración de la conexión a la base de datos MySQL
+
+const config = require('./config')
 const db = mysql.createConnection({
-  host: 'databaserg.cley2mo8q00o.us-east-2.rds.amazonaws.com', // Reemplaza con el endpoint de tu RDS
-  user: 'admin', // Reemplaza con tu usuario de MySQL
-  password: 'root1002468632', // Reemplaza con tu contraseña de MySQL
-  database: 'Store1' // Reemplaza con el nombre de tu base de datos
+  host: config.db.host,
+  user: config.db.user,
+  password: config.db.password,
+  database: config.db.database,
 });
 
 // Conectar a la base de datos
