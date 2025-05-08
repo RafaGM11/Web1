@@ -2308,6 +2308,53 @@ input, select, textarea {
 			padding: 0;
 		}
 
+/* Estilo para el contenedor del producto */
+.product-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Estilo para la imagen del producto */
+.product-image img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+/* Estilo para los detalles del producto */
+.product-details {
+  flex: 1;
+}
+
+.product-details h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+.product-details .button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.product-details .button:hover {
+  background-color: #0056b3;
+}
+
 /* Image */
 
 	.image {
