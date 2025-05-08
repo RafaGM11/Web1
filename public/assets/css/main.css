@@ -2328,8 +2328,8 @@ input, select, textarea {
 }
 
 .product-image img {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
