@@ -2308,23 +2308,19 @@ input, select, textarea {
 			padding: 0;
 		}
 
-/* Estilo para el contenedor del producto */
-.product-item {
+/* Contenedor principal para imágenes y detalles */
+.product-details-container {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+  gap: 20px; /* Espacio entre las imágenes y los detalles */
+  margin-top: 20px;
 }
 
-/* Estilo para la imagen del producto */
+/* Estilo para las imágenes */
 .product-images {
   display: flex;
+  flex-direction: column; /* Las imágenes se apilan verticalmente */
   gap: 10px;
-  overflow-x: auto;
-  padding: 10px 0;
 }
 
 .product-image img {
@@ -2332,12 +2328,11 @@ input, select, textarea {
   max-height: 250px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
-/* Estilo para los detalles del producto */
+/* Estilo para los detalles */
 .product-details {
-  flex: 1;
+  flex: 1; /* Ocupa el espacio restante */
 }
 
 .product-details h2 {
@@ -2347,22 +2342,8 @@ input, select, textarea {
 
 .product-details p {
   margin: 5px 0;
+  font-size: 1.2em;
 }
-
-.product-details .button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.product-details .button:hover {
-  background-color: #0056b3;
-}
-
 /* Image */
 
 	.image {
