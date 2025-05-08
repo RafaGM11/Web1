@@ -44,21 +44,21 @@
           <header>
             <h1><%= product.ProductName %></h1>
           </header>
-          <section class="tiles">
-            <% products.forEach(product => { %>
-              <article class="product-item">
-                <div class="product-image">
-                  <img src="<%= product.ImageURL %>" alt="<%= product.ProductName %>" />
-                </div>
-                <div class="product-details">
-                  <h2><%= product.ProductName %></h2>
-                  <p><%= product.ProductDescription %></p>
-                  <p><strong>Precio:</strong> $<%= product.Price %></p>
-                  <a href="/producto/<%= product.ProductID %>" class="button">Ver más</a>
-                </div>
-              </article>
-            <% }) %>
-          </section>
+            <section class="product-details-container">
+              <div class="product-images">
+                <% product.Images.forEach(imageURL => { %>
+                  <div class="product-image">
+                    <img src="<%= imageURL %>" alt="<%= product.ProductName %>" />
+                  </div>
+                <% }) %>
+              </div>
+              <div class="product-details">
+                <h2><%= product.ProductName %></h2>
+                <p><%= product.ProductDescription %></p>
+                <p><strong>Precio:</strong> $<%= product.Price %></p>
+                <p><strong>Stock:</strong> <%= product.Stock %></p>
+              </div>
+            </section>
         </div>
       </div>
       <!-- Footer -->

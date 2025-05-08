@@ -2320,11 +2320,18 @@ input, select, textarea {
 }
 
 /* Estilo para la imagen del producto */
+.product-images {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
 .product-image img {
   max-width: 150px;
   max-height: 150px;
-  margin-right: 20px;
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para los detalles del producto */
