@@ -2324,8 +2324,9 @@ input, select, textarea {
 }
 
 .product-image img {
-  max-width: 250px;
-  max-height: 250px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -2405,7 +2406,7 @@ input, select, textarea {
 				}
 
 			}
-			
+
 @media (max-width: 768px) {
   .product-images {
     flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
