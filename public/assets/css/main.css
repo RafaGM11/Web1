@@ -2345,7 +2345,7 @@ input, select, textarea {
 
 .swiper-container {
   width:70%; /* Ajusta el ancho del carrusel */
-  height: 250px; /* Ajusta la altura del carrusel */
+  height: 300px; /* Ajusta la altura del carrusel */
 }
 
 .swiper-slide img {
