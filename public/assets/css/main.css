@@ -2323,30 +2323,40 @@ input, select, textarea {
   gap: 10px;
 }
 
+.product-image {
+	position: relative;
+}
 .product-image img {
-  width: 550px;
-  height: 550px;
-  object-fit: cover; /* Mantiene la proporción de la imagen */
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	width: 550px;
+	height: 550px;
+	object-fit: cover; /* Mantiene la proporción de la imagen */
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para los detalles */
 .product-details {
-  flex: 1; /* Ocupa el espacio restante */
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column; /* Alinea los detalles verticalmente */
-}
+	position: absolute;
+	bottom: 0; /* Posiciona la descripción en la base de la imagen */
+	left: 0;
+	width: 100%; /* Asegura que ocupe todo el ancho de la imagen */
+	background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+	color: #fff; /* Texto blanco */
+	padding: 10px;
+	box-sizing: border-box; /* Incluye el padding en el ancho total */
+	text-align: center; /* Centra el texto */
+	border-radius: 0 0 5px 5px; /* Bordes redondeados en la parte inferior */
+  }
+  
 
 .product-details h2 {
-  margin: 0 0 5px;
-  font-size: 1.0em;
+  margin: 0;
+  font-size: 1.5em;
 }
 
 .product-details p {
   margin: 5px 0;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 /* Image */
 
@@ -2411,11 +2421,18 @@ input, select, textarea {
 			}
 
 @media (max-width: 768px) {
-  .product-images {
-    flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
-    align-items: center;
-  }
+	.product-image img {
+		width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+		height: auto; /* Mantiene la proporción */
+	  }
+	
+	  .product-details {
+		font-size: 0.9em; /* Reduce el tamaño del texto */
+		padding: 5px;
+	  }
 }
+
+
 
 /* Table */
 
