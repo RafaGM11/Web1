@@ -3012,8 +3012,13 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: em 0 0.1em 0 ;
+				padding: 3em 0 0.1em 0 ;
 			}
+
+			#header .logo {
+				margin: -0.5em 0 1em 0; /* Ajusta el margen del logo en pantallas pequeñas */
+			}
+
 
 				#header nav {
 					right: 0.5em;
