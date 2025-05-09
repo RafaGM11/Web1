@@ -2405,7 +2405,13 @@ input, select, textarea {
 				}
 
 			}
-
+			
+@media (max-width: 768px) {
+  .product-images {
+    flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
+    align-items: center;
+  }
+}
 /* Table */
 
 	.table-wrapper {
