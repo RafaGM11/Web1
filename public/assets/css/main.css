@@ -2344,7 +2344,7 @@ input, select, textarea {
 }
 
 .swiper-container {
-  width:50%; /* Ajusta el ancho del carrusel */
+  width:60%; /* Ajusta el ancho del carrusel */
   height: 380px; /* Ajusta la altura del carrusel */
   overflow: hidden; /* Evita el desbordamiento */
 }
