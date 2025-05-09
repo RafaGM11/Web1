@@ -2322,8 +2322,8 @@ input, select, textarea {
 }
 
 .product-image img {
-  width: 550px; /* Ajusta el tamaño de las imágenes */
-  height: 500px; /* Ajusta la altura de las imágenes */
+  width: 450px; /* Ajusta el tamaño de las imágenes */
+  height: 400px; /* Ajusta la altura de las imágenes */
   object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -2344,7 +2344,7 @@ input, select, textarea {
 }
 
 .swiper-container {
-  width: 100%; /* Ajusta el ancho del carrusel */
+  width:80%; /* Ajusta el ancho del carrusel */
   height: 500px; /* Ajusta la altura del carrusel */
 }
 
