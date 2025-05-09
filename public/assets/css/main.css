@@ -2893,7 +2893,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 2.75em 0 0.1em 0 ;
+		padding: 2em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -3012,7 +3012,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 3em 0 0.1em 0 ;
+				padding: 1em 0 0.1em 0 ;
 			}
 
 			#header .logo {
@@ -3022,7 +3022,7 @@ input, select, textarea {
 
 				#header nav {
 					right: 0.5em;
-					top: 0.5em;
+					top: 1em;
 				}
 
 					#header nav ul li a[href="#menu"]:before, #header nav ul li a[href="#menu"]:after {
