@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
   </head>
   <body class="is-preload">
@@ -40,21 +41,29 @@
       <!-- Main -->
       <div id="main">
         <div class="inner">
-            <section class="product-details-container">
-              <div class="product-images">
+          <section class="product-details-container">
+            <!-- Swiper Container -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
                 <% product.Images.forEach(imageURL => { %>
-                  <div class="product-image">
+                  <div class="swiper-slide">
                     <img src="<%= imageURL %>" alt="<%= product.ProductName %>" />
                   </div>
                 <% }) %>
               </div>
-              <div class="product-details">
-                <h2><%= product.ProductName %></h2>
-                <p><%= product.ProductDescription %></p>
-                <p><strong>Precio:</strong> $<%= product.Price %></p>
-                <p><strong>Stock:</strong> <%= product.Stock %></p>
-              </div>
-            </section>
+              <!-- Botones de navegación -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <!-- Paginación -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="product-details">
+              <h2><%= product.ProductName %></h2>
+              <p><%= product.ProductDescription %></p>
+              <p><strong>Precio:</strong> $<%= product.Price %></p>
+              <p><strong>Stock:</strong> <%= product.Stock %></p>
+            </div>
+          </section>
         </div>
       </div>
       <!-- Footer -->
@@ -104,5 +113,23 @@
     <script src="/assets/js/breakpoints.min.js"></script>
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        loop: true, // Habilita el bucle infinito
+        autoplay: {
+          delay: 3000, // Cambia de imagen cada 3 segundos
+          disableOnInteraction: false, // Continúa el autoplay incluso si el usuario interactúa
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
