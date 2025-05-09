@@ -2334,6 +2334,9 @@ input, select, textarea {
 /* Estilo para los detalles */
 .product-details {
   flex: 1; /* Ocupa el espacio restante */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Alinea los detalles verticalmente */
 }
 
 .product-details h2 {
