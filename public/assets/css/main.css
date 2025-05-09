@@ -2322,8 +2322,8 @@ input, select, textarea {
 }
 
 .product-image img {
-  width: 300px; /* Ajusta el tamaño de las imágenes */
-  height: 300px;
+  width: 550px; /* Ajusta el tamaño de las imágenes */
+  height: 500px;
   object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
