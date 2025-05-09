@@ -116,7 +116,9 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       const swiper = new Swiper('.swiper-container', {
-        loop: true, // Habilita el bucle infinito
+        loop: true, // Habilita el bucle 
+        slidesPerView: 1, // Muestra una imagen a la vez
+        spaceBetween: 0, // Espacio entre las imágenes
         autoplay: {
           delay: 5000, // Cambia de imagen cada 3 segundos
           disableOnInteraction: false, // Continúa el autoplay incluso si el usuario interactúa

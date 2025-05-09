@@ -2346,7 +2346,16 @@ input, select, textarea {
 .swiper-container {
   width:70%; /* Ajusta el ancho del carrusel */
   height: 300px; /* Ajusta la altura del carrusel */
+  overflow: hidden; /* Evita el desbordamiento */
 }
+
+.swiper-wrapper {
+  display: flex;
+}
+.swiper-slide {
+	flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+	width: 100%; /* Asegura que cada imagen ocupe el 100% del ancho del contenedor */
+  }
 
 .swiper-slide img {
   width: 100%;
@@ -2355,6 +2364,19 @@ input, select, textarea {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 736px) {
+	.swiper-container {
+	  width: 100%; /* El carrusel ocupa el 100% del ancho disponible */
+	  max-width: 600px; /* Opcional: establece un ancho máximo */
+	  height: auto; /* Ajusta la altura automáticamente */
+	}
+	
+	.swiper-slide img {
+	  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+	  height: auto; /* Mantiene la proporción de la imagen */
+	  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+	}
+  }
 /* Image */
 
 	.image {
