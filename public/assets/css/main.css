@@ -2310,7 +2310,7 @@ input, select, textarea {
 
 .product-details-container {
   display: flex; /* Alinea las imágenes y la descripción horizontalmente */
-  align-items: flex-end; /* Alinea la descripción con la base de la imagen */
+  align-items: center; /* Alinea la descripción con la base de la imagen */
   gap: 20px; /* Espacio entre las imágenes y la descripción */
   margin-top: 20px;
 }
@@ -2322,8 +2322,8 @@ input, select, textarea {
 }
 
 .product-image img {
-  width: 300px; /* Ajusta el tamaño de las imágenes */
-  height: 300px; /* Ajusta la altura de las imágenes */
+  width: 550px; /* Ajusta el tamaño de las imágenes */
+  height: 500px; /* Ajusta la altura de las imágenes */
   object-fit: cover; /* Mantiene la proporción de la imagen */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
