@@ -2308,55 +2308,39 @@ input, select, textarea {
 			padding: 0;
 		}
 
-/* Contenedor principal para imágenes y detalles */
 .product-details-container {
-  display: flex;
+  display: flex; /* Alinea los elementos horizontalmente */
   align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
-  gap: 20px; /* Espacio entre las imágenes y los detalles */
+  gap: 20px; /* Espacio entre las imágenes y la descripción */
   margin-top: 20px;
 }
 
-/* Estilo para las imágenes */
 .product-images {
   display: flex;
   flex-direction: column; /* Las imágenes se apilan verticalmente */
   gap: 10px;
 }
 
-.product-image {
-	position: relative;
-}
 .product-image img {
-	width: 550px;
-	height: 550px;
-	object-fit: cover; /* Mantiene la proporción de la imagen */
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Ajusta el tamaño de las imágenes */
+  height: 300px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para los detalles */
 .product-details {
-	position: absolute;
-	bottom: 0; /* Posiciona la descripción en la base de la imagen */
-	left: 0;
-	width: 100%; /* Asegura que ocupe todo el ancho de la imagen */
-	background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-	color: #fff; /* Texto blanco */
-	padding: 10px;
-	box-sizing: border-box; /* Incluye el padding en el ancho total */
-	text-align: center; /* Centra el texto */
-	border-radius: 0 0 5px 5px; /* Bordes redondeados en la parte inferior */
-  }
-  
+  flex: 1; /* Ocupa el espacio restante */
+}
 
 .product-details h2 {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 1.5em;
 }
 
 .product-details p {
   margin: 5px 0;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 /* Image */
 
@@ -2421,15 +2405,18 @@ input, select, textarea {
 			}
 
 @media (max-width: 768px) {
-	.product-image img {
-		width: 100%; /* Ajusta el ancho de la imagen al contenedor */
-		height: auto; /* Mantiene la proporción */
-	  }
-	
-	  .product-details {
-		font-size: 0.9em; /* Reduce el tamaño del texto */
-		padding: 5px;
-	  }
+  .product-details-container {
+    flex-direction: column; /* Apila las imágenes y la descripción verticalmente */
+    align-items: center; /* Centra los elementos */
+  }
+
+  .product-images {
+    align-items: center; /* Centra las imágenes */
+  }
+
+  .product-details {
+    text-align: center; /* Centra el texto */
+  }
 }
 
 

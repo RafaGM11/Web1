@@ -42,19 +42,17 @@
         <div class="inner">
             <section class="product-details-container">
               <div class="product-images">
-                <% product.Images.forEach((imageURL, index) => { %>
+                <% product.Images.forEach(imageURL => { %>
                   <div class="product-image">
                     <img src="<%= imageURL %>" alt="<%= product.ProductName %>" />
-                    <% if (index === 0) { %>
-                      <div class="product-details">
-                        <h2><%= product.ProductName %></h2>
-                        <p><%= product.ProductDescription %></p>
-                        <p><strong>Precio:</strong> $<%= product.Price %></p>
-                        <p><strong>Stock:</strong> <%= product.Stock %></p>
-                      </div>
-                    <% } %>
                   </div>
                 <% }) %>
+              </div>
+              <div class="product-details">
+                <h2><%= product.ProductName %></h2>
+                <p><%= product.ProductDescription %></p>
+                <p><strong>Precio:</strong> $<%= product.Price %></p>
+                <p><strong>Stock:</strong> <%= product.Stock %></p>
               </div>
             </section>
         </div>
